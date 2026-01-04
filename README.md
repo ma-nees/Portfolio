@@ -2,7 +2,7 @@
 
 A modern, animated portfolio website built with React, TypeScript, and Tailwind CSS.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen)
+![Portfolio Preview](manishsahani.com.np)
 
 ## ✨ Features
 
