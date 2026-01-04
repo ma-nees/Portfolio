@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Futuristic Color Palette */
+    --background: 240 38% 6%; /* Deep Space Blue */
+    --foreground: 240 100% 94%; /* Light Lavender */
+
+    --card: 240 29% 14%; /* Dark Navy */
+    --card-foreground: 240 100% 94%;
+
+    --popover: 240 29% 14%;
+    --popover-foreground: 240 100% 94%;
+
+    --primary: 190 100% 50%; /* Electric Cyan */
+    --primary-foreground: 240 38% 6%;
+
+    --secondary: 282 100% 50%; /* Neon Purple */
+    --secondary-foreground: 240 100% 94%;
+
+    --accent: 318 100% 50%; /* Hot Pink */
+    --accent-foreground: 240 100% 94%;
+
+    --muted: 240 29% 14%;
+    --muted-foreground: 240 50% 70%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 240 100% 94%;
+
+    --border: 240 50% 25%;
+    --input: 240 29% 18%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gradient definitions */
+    --gradient-cyber: linear-gradient(135deg, hsl(190, 100%, 50%), hsl(282, 100%, 50%), hsl(318, 100%, 50%));
+    --gradient-glow: radial-gradient(circle at center, hsl(190, 100%, 50% / 0.2), transparent 70%);
+    
+    /* Glass morphism */
+    --glass-bg: hsl(240, 29%, 14% / 0.6);
+    --glass-border: hsl(190, 100%, 50% / 0.2);
+    
+    /* Shadows and glows */
+    --shadow-neon-cyan: 0 0 20px hsl(190, 100%, 50% / 0.5), 0 0 40px hsl(190, 100%, 50% / 0.3);
+    --shadow-neon-purple: 0 0 20px hsl(282, 100%, 50% / 0.5), 0 0 40px hsl(282, 100%, 50% / 0.3);
+    --shadow-neon-pink: 0 0 20px hsl(318, 100%, 50% / 0.5), 0 0 40px hsl(318, 100%, 50% / 0.3);
+    
+    --sidebar-background: 240 29% 14%;
+    --sidebar-foreground: 240 100% 94%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 240 38% 6%;
+    --sidebar-accent: 240 29% 18%;
+    --sidebar-accent-foreground: 240 100% 94%;
+    --sidebar-border: 240 50% 25%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary));
+  }
+}
+
+@layer utilities {
+  /* Glass morphism effect */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  /* Neon glow effects */
+  .glow-cyan {
+    box-shadow: var(--shadow-neon-cyan);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--shadow-neon-purple);
+  }
+  
+  .glow-pink {
+    box-shadow: var(--shadow-neon-pink);
+  }
+  
+  /* Text glow */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(190, 100%, 50% / 0.8), 0 0 20px hsl(190, 100%, 50% / 0.5);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(282, 100%, 50% / 0.8), 0 0 20px hsl(282, 100%, 50% / 0.5);
+  }
+  
+  .text-glow-pink {
+    text-shadow: 0 0 10px hsl(318, 100%, 50% / 0.8), 0 0 20px hsl(318, 100%, 50% / 0.5);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(135deg, hsl(190, 100%, 50%), hsl(282, 100%, 50%), hsl(318, 100%, 50%));
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
