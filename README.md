@@ -2,7 +2,6 @@
 
 A modern, animated portfolio website built with React, TypeScript, and Tailwind CSS.
 
-![Portfolio Preview](manishsahani.com.np)
 
 ## ✨ Features
 
